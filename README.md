@@ -34,7 +34,9 @@ A modern, sleek, and animated iPhone landing page built with **React**, **GSAP**
 | Drei               | Useful helpers for React Three Fiber |
 | Vite / CRA         | Development server and bundler       |
 
-## 📁 Project Structure
+<details>
+  <summary>## 📁 Project Structure</summary>
+
 
 ```
 public/
@@ -102,6 +104,7 @@ README.md
 tailwind.config.js
 vite.config.js
 ```
+</details>
 
 ## 🚧 Installation
 
