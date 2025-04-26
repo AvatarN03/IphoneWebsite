@@ -1,6 +1,3 @@
-Sure! Here's everything combined into a single clean text block for you to **copy easily**:
-
----
 
 # 📱 iPhone Landing Page (React + GSAP + Three.js)
 
@@ -17,10 +14,9 @@ A modern, sleek, and animated iPhone landing page built with **React**, **GSAP**
 
 ## 📸 Preview
 
-![Landing Page Preview](![image](https://github.com/user-attachments/assets/305ab09b-9138-41e4-be41-b25b81a7c8fa)
-)
-![Landing Page Preview - Responsive](![image](https://github.com/user-attachments/assets/841a0bb7-670e-4d4f-9446-0d36c8a719f9)
-)
+![Landing Page Preview](https://github.com/user-attachments/assets/305ab09b-9138-41e4-be41-b25b81a7c8fa)
+
+![Landing Page Preview - Responsive](https://github.com/user-attachments/assets/841a0bb7-670e-4d4f-9446-0d36c8a719f9)
 
 
 ## 🚀 Live Demo
