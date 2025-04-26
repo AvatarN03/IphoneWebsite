@@ -124,11 +124,14 @@ npm run dev
 ## 🧩 Key Dependencies
 
 ```json
-"three": "^0.158.0",
-"@react-three/fiber": "^8.13.0",
-"@react-three/drei": "^9.76.0",
-"gsap": "^3.12.0",
-"react": "^18.2.0"
+"@gsap/react": "^2.1.2",
+"@react-three/drei": "^10.0.6",
+"@react-three/fiber": "^9.1.2",
+"gsap": "^3.12.7",
+"react": "^19.0.0",
+"react-dom": "^19.0.0",
+"three": "^0.175.0"
+
 ```
 
 ## ✨ Credits
