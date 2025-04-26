@@ -1,12 +1,172 @@
-# React + Vite
+Sure! Here's everything combined into a single clean text block for you to **copy easily**:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 📱 iPhone Landing Page (React + GSAP + Three.js)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A modern, sleek, and animated iPhone landing page built with **React**, **GSAP** animations, and **Three.js** for interactive 3D model rendering. Perfect for product showcases, portfolio pieces, or e-commerce product landing.
 
-## Expanding the ESLint configuration
+## 🔥 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✨ Smooth entrance animations using **GSAP**
+- 📦 3D iPhone model integrated using **Three.js**
+- ⚙️ Fully responsive and mobile-friendly layout
+- 🧠 Clean and modular React code structure
+- 🌐 Scroll-triggered and hover animations
+- 🕹️ Interactive 3D rotation and lighting
+
+## 📸 Preview
+
+![Landing Page Preview](![image](https://github.com/user-attachments/assets/305ab09b-9138-41e4-be41-b25b81a7c8fa)
+)
+![Landing Page Preview - Responsive](![image](https://github.com/user-attachments/assets/841a0bb7-670e-4d4f-9446-0d36c8a719f9)
+)
+
+
+## 🚀 Live Demo
+
+[🔗 Live Site](https://iphone-website-ecru.vercel.app/)
+
+## 🛠️ Tech Stack
+
+| Tech               | Description                          |
+|--------------------|--------------------------------------|
+| React              | Frontend library for building UI     |
+| GSAP               | Animations and transitions           |
+| Three.js           | 3D rendering engine                  |
+| React Three Fiber  | React renderer for Three.js          |
+| Drei               | Useful helpers for React Three Fiber |
+| Vite / CRA         | Development server and bundler       |
+
+## 📁 Project Structure
+
+```
+public/
+    ├── assets/
+        ├── images/
+            ├── apple.svg
+            ├── bag.svg
+            ├── black.jpg
+            ├── blue.jpg
+            ├── chip.jpeg
+            ├── explore1.jpg
+            ├── explore2.jpg
+            ├── frame.png
+            ├── hero.jpeg
+            ├── pause.svg
+            ├── play.svg
+            ├── replay.svg
+            ├── right.svg
+            ├── search.svg
+            ├── watch.svg
+            ├── white.jpg
+            └── yellow.jpg
+        ├── videos/
+            ├── explore.mp4
+            ├── frame.mp4
+            ├── hero.mp4
+            ├── highlight-first.mp4
+            ├── hightlight-fourth.mp4
+            ├── hightlight-sec.mp4
+            ├── hightlight-third.mp4
+            └── smallHero.mp4
+        └── react.svg
+    ├── models/
+        └── scene.glb
+    └── vite.svg
+src/
+    ├── components/
+        ├── Features.jsx
+        ├── Footer.jsx
+        ├── Hero.jsx
+        ├── Highlights.jsx
+        ├── HowItWorks.jsx
+        ├── IPhone.jsx
+        ├── Lights.jsx
+        ├── Loader.jsx
+        ├── Modal.jsx
+        ├── ModalView.jsx
+        ├── Navbar.jsx
+        └── VideoCarousel.jsx
+    ├── constants/
+        └── index.js
+    ├── utils/
+        ├── animation.js
+        └── index.js
+    ├── App.jsx
+    ├── index.css
+    └── main.jsx
+.gitignore
+eslint.config.js
+index.html
+package-lock.json
+package.json
+postcss.config.js
+README.md
+tailwind.config.js
+vite.config.js
+```
+
+## 🚧 Installation
+
+```bash
+# Clone the repo
+git clone https://github.com/AvatarN03/IphoneWebsite.git
+
+# Navigate into the project
+cd IphoneWebsite
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+> Make sure you have a `.glb` iPhone model inside the `public/` folder. You can download one from Sketchfab or similar platforms.
+
+## 🧩 Key Dependencies
+
+```json
+"three": "^0.158.0",
+"@react-three/fiber": "^8.13.0",
+"@react-three/drei": "^9.76.0",
+"gsap": "^3.12.0",
+"react": "^18.2.0"
+```
+
+## ✨ Credits
+
+- **Tutorial Source**: Project based on [JavaScript Mastery](https://www.youtube.com/@javascriptmastery) tutorial. Huge thanks for the amazing guidance and resources.
+- **3D Model**: [Sketchfab / Author Name]
+- **Inspiration**: Apple product landing pages
+- **Libraries**: GSAP, Three.js, React Three Fiber, Drei
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+## 💡 Future Enhancements
+
+- Add scroll-based animation triggers
+- Add multiple color/model options
+- Add CTA and email form integration
+- Improve mobile gestures and tilt effects
+
+## 🙋‍♂️ Author
+
+Developed by **[Prashanth Naidu](https://github.com/AvatarN03)**
+
+For inquiries, feel free to reach out!
+
+---
+
+Got it! Since you followed **JavaScript Mastery**'s tutorial, it’s good to mention and credit them properly in your `README.md` too.  
+Here’s the updated, **full** text block — including the credit to **JavaScript Mastery** — ready to copy:
+
+---
+
+
+
+
+
