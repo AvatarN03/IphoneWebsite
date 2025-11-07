@@ -10,8 +10,6 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <main className="bg-black">
-      {/* navbar */}
-      <Navbar/>
       {/* hero */}
       <Hero />
       {/* Highlights */}

@@ -14,8 +14,10 @@
     "@react-three/drei": "^10.0.6",
     "@react-three/fiber": "^9.1.2",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.552.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.9.5",
     "three": "^0.175.0"
   },
   "devDependencies": {
