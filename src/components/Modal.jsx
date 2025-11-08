@@ -11,8 +11,6 @@ import { models, sizes } from '../constants'
 import { animateWithGsapTimeline } from '../utils/animation'
 
 const Modal = () => {
-
-
     const [size, setSize] = useState('small');
     const [modal, setModal] = useState({
         title: 'iPhone 15 Pro in Natural Titanium',
@@ -21,7 +19,6 @@ const Modal = () => {
     })
 
     //camera control
-
     const cameraControlSmall = useRef()
     const cameraControlLarge = useRef()
 
@@ -54,16 +51,17 @@ const Modal = () => {
         gsap.to("#heading", {
             y: 0,
             opacity: 1,
-        }
-        )
+        })
     }, [])
+
     return (
-        <section className="common-padding">
+        <section className="common-padding overflow-hidden">
             <div className="screen-max-width">
                 <h1 id="heading" className="section-heading">Take a Closer Look</h1>
                 <div className="flex flex-col mt-4 items-center">
-                    <div className="w-full h-[75vh] md:h-[90vh] overflow-hidden relative ">
-                        <ModalView index={1}
+                    <div className="w-full h-[75vh] md:h-[90vh] relative overflow-hidden">
+                        <ModalView 
+                            index={1}
                             groupRef={small}
                             gsapType='view1'
                             controlRef={cameraControlSmall}
@@ -71,7 +69,8 @@ const Modal = () => {
                             item={modal}
                             size={size}
                         />
-                        <ModalView index={2}
+                        <ModalView 
+                            index={2}
                             groupRef={large}
                             gsapType='view2'
                             controlRef={cameraControlLarge}
@@ -81,54 +80,51 @@ const Modal = () => {
                         />
 
                         <Canvas
-                            className='w-full h-full '
+                            className='w-full h-full absolute inset-0'
                             style={{
-                                position: 'fixed',
+                                position: 'absolute',
                                 top: 0,
                                 left: 0,
                                 right: 0,
                                 bottom: 0,
-                                overflow: 'hidden',
-
                             }}
-
                             eventSource={document.getElementById('root')}
-
                         >
                             <View.Port />
                         </Canvas>
                     </div>
-                    <div className="mx-auto w-full">
+                    
+                    <div className="mx-auto w-full max-w-full px-4">
                         <p className='text-sm font-light text-center mb-5'>{modal.title}</p>
-                        <div className="flex-center">
-                            <ul className="color-container">
-                                {
-                                    models.map((model, index) => (
-                                        <li key={index} className='w-6 h-6 rounded-full mx-2 cursor-pointer'
-                                            style={{
-                                                backgroundColor: model.color[0]
-                                            }}
-
-                                            onClick={() => setModal(model)} />
-                                    ))
-                                }
+                        <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+                            <ul className="color-container flex justify-center">
+                                {models.map((model, index) => (
+                                    <li 
+                                        key={index} 
+                                        className='w-6 h-6 rounded-full mx-2 cursor-pointer flex-shrink-0'
+                                        style={{
+                                            backgroundColor: model.color[0]
+                                        }}
+                                        onClick={() => setModal(model)} 
+                                    />
+                                ))}
                             </ul>
 
-                            <button className='size-btn-container'>
-                                {
-                                    sizes.map(({ label, value }) => (
-                                        <span key={label} className='size-btn'
-                                            style={{
-                                                backgroundColor: size === value ? "white" : "transparent",
-                                                color: size === value ? "#000" : "white",
-                                            }}
-
-                                            onClick={() => setSize(value)}
-                                        > {label}
-                                        </span>
-                                    ))
-                                }
-                            </button>
+                            <div className='size-btn-container flex bg-gray-800/70 rounded-full p-1'>
+                                {sizes.map(({ label, value }) => (
+                                    <span 
+                                        key={label} 
+                                        className='size-btn px-4 py-1 rounded-full text-sm transition-all duration-300 cursor-pointer flex-shrink-0'
+                                        style={{
+                                            backgroundColor: size === value ? "white" : "transparent",
+                                            color: size === value ? "#000" : "white",
+                                        }}
+                                        onClick={() => setSize(value)}
+                                    > 
+                                        {label}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

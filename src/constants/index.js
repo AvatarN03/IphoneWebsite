@@ -98,47 +98,127 @@ export const storeItems = [
   "Accessories",
 ];
 
-export const storeBox = [
+export const storeBox1 = [
   {
     title: "iPhone 17 Pro",
-    desc: "All out Pro.",
-    price: "From ₹134900.00**",
+    desc1: "All out Pro.",
+    desc2: "From ₹134900.00**",
     img: "/assets/images/iphone17.jpeg",
     clss: true,
   },
   {
     title: "MacBook Pro 14",
-    desc: "Supercharged by M5.",
-    price: "From ₹169900.00**",
+    desc1: "Supercharged by M5.",
+    desc2: "From ₹169900.00**",
     img: "/assets/images/mac-store.jpeg",
     clss: true,
   },
   {
     title: "iPhone Air",
-    desc: "The thinnest iPhone ever.",
-    price: "From 119900.00**",
+    desc1: "The thinnest iPhone ever.",
+    desc2: "From 119900.00**",
     img: "/assets/images/thin.jpeg",
     clss: false,
   },
   {
     title: "iPad Pro",
-    desc: "Mmmmmm. Power.",
-    price: "From 99900.00**",
+    desc1: "Mmmmmm. Power.",
+    desc2: "From 99900.00**",
     img: "/assets/images/ipad-store.jpeg",
     clss: true,
   },
   {
     title: "Apple Watch SE 3",
-    desc: "Walk it. Talk it. Track it. Love it.",
-    price: "From 25900.00**",
+    desc1: "Walk it. Talk it. Track it. Love it.",
+    desc2: "From 25900.00**",
     img: "/assets/images/s3.jpeg",
     clss: false,
   },
   {
     title: "AirPods Pro 3",
-    desc: "The world's best in-ear Active Noise Cancellation",
-    price: "From 25900.00**",
+    desc1: "The world's best in-ear Active Noise Cancellation",
+    desc2: "From 25900.00**",
     img: "/assets/images/airpod.jpeg",
     clss: false,
   },
 ];
+export const storeBox2 = [
+  {
+    title: "Shop with a Specialist over video.",
+    desc1: "Choose your next device in guided, one-way video session",
+    desc2: "",
+    img: "/assets/images/store/phone2.jpeg",
+    clss: false,
+  },
+  {
+    title: "Shop one on one with a Specialist online.",
+    desc1: "",
+    desc2: "apple specialist",
+    img: "/assets/images/store/specialist.jpeg",
+    clss: false,
+  },
+  {
+    title: "Explore Apple Intelligence",
+    desc1: "Come and try it for yourself ina free session at Apple Store.",
+    desc2: "Today at apple",
+    img: "/assets/images/store/today.jpeg",
+    clss: false,
+  },
+  {
+    title: "Join free sessions at your Apple Store",
+    desc1: "Learn aboout the layesy features and how to go further with your Apple devices.",
+    desc2: "Today at apple",
+    img: "/assets/images/store/today2.jpeg",
+    clss: false,
+  },
+  {
+    title: "Set up your new device with help from a Specialist.",
+    desc1: "Ley us guide you through data transfer, the latest features and more, in an online, one-to-one session.",
+    desc2: "Personal setup",
+    img: "/assets/images/store/personal.jpeg",
+    clss: false,
+  },
+  {
+    title: "Need support? Our teams are here for you.",
+    desc1: "",
+    desc2: "watch and learn",
+    img: "/assets/images/store/human.jpeg",
+    clss: false,
+  },
+];
+
+
+export const macBox = [
+  {
+    type:"laptops",
+    title:"MacBook Air 13\" and 15\" ",
+    desc1:"M4 chip",
+    desc2:"Strikingly thin and fast so you work, play or create anywhere.",
+    price:"From ₹99900.00** or ₹149830.00/mo. for 6 mo.*",
+    img:"/assets/images/mac/mac-laptop.jpg"
+  },
+  {
+    type:"laptops",
+    title:"MacBook Pro 14\" and 16\" ",
+    desc1:"M5, M4 Pro or M4 Max chip",
+    desc2:"The most advanced Mac laptops for demanding workflows.",
+    price:"From ₹169900.00** or ₹26650.00/mo. for 6 mo.*",
+   img:"/assets/images/mac/mac-mac.jpg"
+  },
+  {
+    type:"desktops",
+    title:"iMac",
+    desc1:"M4 chip",
+    desc2:"A stunning all-in-one desktop for creativity and productivity.",
+    price:"From ₹134900.00** or ₹21650.00/mo. for 6 mo.*",
+    img:"/assets/images/mac/mac-desktop.jpg"
+  },
+  {
+    type:"displays",
+    title:"Studio",
+    desc1:"",
+    desc2:"A 5K Retina display with stellar camera and audio.",
+    price:"From ₹159900.00** or ₹27907.00/mo. for 6 mo.*",
+    img:"/assets/images/mac/mac-display.jpg"
+  },
+]

@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className='w-full py-5 sm:px-10 px-5 flex justify-between items-center relative bg-black overflow-hidden'>
+      <header className='w-full max-w-[1200px] mx-auto py-5 sm:px-10 px-5 flex justify-between items-center relative bg-black overflow-hidden'>
         <nav className='flex w-full screen-max-width items-center justify-between'>
           {/* Apple Logo */}
           <Link to={"/"} className="flex-shrink-0">
@@ -55,7 +55,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-black z-50 sm:hidden">
+        <div className="fixed w-screen h-screen z-60 inset-0 bg-black z-50 sm:hidden">
           {/* Close Button */}
           <div className="absolute top-5 right-5 z-60">
             <button 
