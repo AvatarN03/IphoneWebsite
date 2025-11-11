@@ -1,7 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ArrowRightCircle, ChevronLeft, ChevronRight } from "lucide-react";
-import { macBox } from "../constants";
+import { macBox, tabs } from "../constants";
 import Footer from "../components/Footer";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 const Mac = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -11,7 +15,7 @@ const Mac = () => {
   const tabRefs = useRef([]);
   const scrollContainerRef = useRef(null);
 
-  const tabs = ["All products", "Laptops", "Desktops", "Displays"];
+
 
   useEffect(() => {
     if (tabRefs.current[activeTab]) {
@@ -58,18 +62,51 @@ const Mac = () => {
     updateArrowVisibility();
   }, []);
 
+  useGSAP(() => {
+    gsap.from(".scale-down", {
+      scale: 2.9, // starts slightly larger (120%)
+      x: "150%", // moves from right
+      opacity: 0, // fades in
+      duration: 1,
+      ease: "power2.inOut",
+    });
+
+    gsap.from(".box-gsap", {
+      x: -150,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "power2.out",
+      stagger: 0.4,
+    });
+
+   gsap.from(".up", {
+  y: 150,
+  opacity: 0,
+  duration: 1.5,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".up", 
+    start: "top 80%",
+    end: "bottom center",
+    scrub: true,
+  },
+});
+  }, []);
+
+
   // Filter products based on active tab
   const filterBox = macBox.filter((item) => {
-    if (activeTab === 0) return true; // All products
-    if (activeTab === 1) return item.type === "laptops"; // Laptops
-    if (activeTab === 2) return item.type === "desktops"; // Desktops
-    if (activeTab === 3) return item.type === "displays"; // Displays
+    if (activeTab === 0) return true; 
+    if (activeTab === 1) return item.type === "laptops"; 
+    if (activeTab === 2) return item.type === "desktops"; 
+    if (activeTab === 3) return item.type === "displays"; 
     return true;
   });
   return (
     <div className="p-4 w-screen min-h-screen max-w-7xl mx-auto">
       <section className="p-2 pt-4 md:pt-16">
-        <h1 className="text-4xl md:text-7xl font-semibold">Mac</h1>
+        <h1 className="text-4xl md:text-7xl font-semibold scale-down">Mac</h1>
         <div className="my-12">
           <div className="relative">
             {/* Mobile Arrows */}
@@ -113,7 +150,7 @@ const Mac = () => {
                   key={index}
                   ref={(el) => (tabRefs.current[index] = el)}
                   onClick={() => setActiveTab(index)}
-                  className={`font-medium transition-colors md:px-4 duration-200 whitespace-nowrap p-2 relative z-20 flex-shrink-0 ${
+                  className={`font-medium transition-colors md:px-4 duration-200 hover:text-white whitespace-nowrap box-gsap p-2 relative z-20 flex-shrink-0 ${
                     activeTab === index
                       ? "text-white font-semibold"
                       : "text-gray-200"
@@ -143,9 +180,7 @@ const Mac = () => {
                     {item.title}
                   </h2>
                   <h5 className="font-bold text-sm">{item.desc1}</h5>
-                  <p className="text-gray-400 flex-grow">
-                    {item.desc2}
-                  </p>
+                  <p className="text-gray-400 flex-grow">{item.desc2}</p>
                   <h5 className="text-base max-w-52 mx-auto font-semibold text-white mt-auto">
                     {item.price}
                   </h5>
@@ -169,11 +204,15 @@ const Mac = () => {
           If you can dream it, <br /> Mac can do it.
         </h1>
 
-        <div className="relative w-full my-10 ">
+        <div className="relative w-full my-10">
           <div className="overflow-hidden w-full rounded-xl h-[600px]">
-            <img src="/assets/images/mac-banner.jpg" alt="mac-banner" className="w-full h-full object-cover object-center" />
+            <img
+              src="/assets/images/mac-banner.jpg"
+              alt="mac-banner"
+              className="w-full h-full object-cover object-center"
+            />
           </div>
-          <div className="absolute text-center w-full max-w-sm p-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="absolute text-center w-full max-w-sm p-3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 up">
             <h3 className="text-2xl font-semibold mb-2">
               Great ideas start here.
             </h3>

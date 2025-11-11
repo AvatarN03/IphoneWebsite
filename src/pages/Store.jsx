@@ -4,6 +4,13 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import StoreCard from "../components/StoreCard";
 import { useDragScroll } from "../utils/useDragScroll";
 import Footer from "../components/Footer";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(ScrollTrigger);
+
+ 
 
 const Store = () => {
   const scrollRef = useDragScroll();
@@ -59,15 +66,49 @@ const Store = () => {
     updateArrowVisibility();
   };
 
-  // Initialize arrow visibility on component mount
+
   useEffect(() => {
     updateArrowVisibility();
   }, []);
 
+useGSAP(() => {
+  gsap.from(".fadeup", {
+    y: 100,
+    opacity: 0, // start invisible
+    duration: 1,
+    delay: 0.5,
+    ease: "power2.out",
+  });
+
+
+  gsap.from(".box-gsap", {
+    x:-150,
+    opacity: 0, 
+    duration: 1,
+    delay: 0.5,
+    ease: "power2.out",
+    stagger:0.25
+  });
+
+    gsap.from(".box-gsap-reverse", {
+      x: 250,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "bounce",
+      stagger: 0.4,
+      scrollTrigger: {
+        trigger: '.box-gsap-reverse',
+        start: "center bottom",
+      },
+    });
+}, []);
+
+
   return (
     <div className="min-h-screen p-4 max-w-7xl mx-auto w-full overflow-hidden relative">
       <section className="py-4 my-8">
-        <div className="flex justify-between items-start md:items-center flex-col md:flex-row px-2">
+        <div className="flex justify-between items-start md:items-center flex-col md:flex-row px-2 fadeup">
           <h2 className="text-5xl md:text-6xl font-bold">Store</h2>
           <p className="font-medium max-w-[350px] text-left md:text-right text-xl md:text-2xl mt-5">
             The best way to buy the products you love.
@@ -84,7 +125,7 @@ const Store = () => {
             {storeItems.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col flex-shrink-0 gap-1 items-center bg-gray-800 p-2 rounded-lg min-w-[100px]"
+                className="flex flex-col flex-shrink-0 gap-1 items-center bg-gray-800 p-2 rounded-lg min-w-[100px] box-gsap"
               >
                 <img
                   src={`/assets/images/store/${item}.png`}
@@ -98,14 +139,14 @@ const Store = () => {
         </div>
       </section>
 
-      <section className="p-2 md:p-4">
+      <section className="p-2 md:p-4 my-16">
         <h3 className="text-2xl md:text-4xl">
           The latest.{" "}
           <span className="text-slate-500">
             Take a look at what's new right there
           </span>
         </h3>
-        <div
+        <div 
           ref={scrollRef}
           className="w-full flex gap-4 overflow-x-auto scrollbar-hide my-8 pb-4 [&>div]:flex-shrink-0 select-none cursor-grab active:cursor-grabbing"
         >

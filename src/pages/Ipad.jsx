@@ -2,23 +2,61 @@ import React, { useState } from "react";
 import { ipadBox1, ipadBox2 } from "../constants";
 import { ChevronUp } from "lucide-react";
 import Footer from "../components/Footer";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger)
 
 const Ipad = () => {
   const [active, setActive] = useState(0);
 
   const handleClick = (index) => {
-    setActive((prev) => (prev === index ? (index == 2 ? 0 : prev + 1) : index)); // toggle
+    setActive((prev) => (prev === index ? (index == 2 ? 0 : prev + 1) : index));
   };
+
+  useGSAP(() => {
+    gsap.from(".scale-down", {
+      scale: 2.9, 
+      x: "150%", 
+      opacity: 0, 
+      duration: 1,
+      ease: "power2.inOut",
+    });
+
+    gsap.from(".box-gsap", {
+      x: -150,
+      opacity: 0,
+      duration: 1,
+      delay: 0.5,
+      ease: "power2.out",
+      stagger: 0.4,
+    });
+
+    gsap.from(".up", {
+      y: 150,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".up",
+        start: "top 80%",
+        end: "bottom center",
+        scrub: true,
+      },
+    });
+  }, []);
   return (
     <>
       <div className="max-w-7xl mx-auto">
         <section className="p-4 ">
-          <h1 className="text-5xl md:text-7xl font-semibold mt-12 md:mt-28">iPad</h1>
+          <h1 className="text-5xl md:text-7xl font-semibold mt-12 md:mt-28 scale-down">
+            iPad
+          </h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-8 ">
             {ipadBox1.map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col p-3 md:p-0  gap-4 bg-slate-900 rounded-[40px]"
+                className="flex flex-col p-3 md:p-0  gap-4 bg-slate-900 rounded-[40px] box-gsap"
               >
                 <div className="w-full overflow-hidden rounded-[40px] shadow-blue shadow-sm">
                   <img
@@ -48,13 +86,13 @@ const Ipad = () => {
         <section className="p-4 my-14">
           <h1 className="text-4xl md:text67xl">Significant others.</h1>
 
-          <div className="rounded-xl flex flex-col md:block h-fit md:h-[60vh] w-full p-4 md:p-8 bg-slate-900 my-12 relative">
+          <div className="rounded-xl flex flex-col md:block h-fit md:h-[60vh] w-full p-4 md:p-8 bg-slate-900 my-12 relative up">
             <div className="max-w-sm p-2 md:p-4 h-full flex justify-center flex-col relative z-10">
               {ipadBox2.map((item, index) => (
                 <div key={index} className="mb-6">
                   <div className={`md:p-3 ${index === 2 ? "" : "border-b-2"}`}>
                     <div
-                      onClick={() => handleClick(index)} // pass index
+                      onClick={() => handleClick(index)}
                       className="flex justify-between items-center mb-4 cursor-pointer select-none"
                     >
                       <h1 className="text-xl font-semibold text-white">
@@ -83,7 +121,6 @@ const Ipad = () => {
                         {item.desc}
                       </p>
 
-                      {/* 👇 Image for mobile view (inside paragraph, visible only on small screens) */}
                       <div className="block  md:hidden my-4 rounded-md overflow-hidden">
                         <img
                           src={item.image}
@@ -97,10 +134,10 @@ const Ipad = () => {
               ))}
             </div>
 
-            {/* 👇 Image for desktop view (absolute on the right) */}
+            
             <div className="hidden md:block absolute top-1/2 right-5 -translate-y-1/2 rounded-md overflow-hidden md:w-[55%] md:max-w-2xl h-[400px]">
               <img
-                src={ipadBox2[active >= 0 ? active : 0].image} // fallback
+                src={ipadBox2[active >= 0 ? active : 0].image} 
                 alt={ipadBox2[active >= 0 ? active : 0].title}
                 className="w-full h-full object-cover object-center transition-all duration-500"
               />

@@ -2,8 +2,8 @@ import React from "react";
 
 const StoreCard = ({ box, additionalCls = false }) => {
   return (
-    <div className={`h-[400px] w-[300px] md:h-[600px] ${additionalCls ? "md:w-[500px]" : "md:w-[400px]"} flex-shrink-0 relative rounded-3xl overflow-hidden bg-gray-900`}>
-      <div className="w-full h-full">
+    <div className={`h-[400px] box-gsap-reverse w-[300px] md:h-[600px] ${additionalCls ? "md:w-[500px]" : "md:w-[400px]"} flex-shrink-0 relative rounded-3xl overflow-hidden bg-gray-900`}>
+      <div className="w-full h-full pointer-events-none">
         <img
           src={box.img}
           alt={box.title}
