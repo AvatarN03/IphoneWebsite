@@ -1,9 +1,63 @@
-import React from 'react'
+import React from "react";
+import Footer from "../components/Footer";
 
 const Support = () => {
   return (
-    <div>Support</div>
-  )
-}
+    <div className="max-w-7xl mx-auto">
+      <section className="p-4">
+       <div className="rounded-md overflow-hidden pointer-events-none w-full h-[300px] md:h-[450px] lg:h-full">
+  <img
+    src="/assets/images/support/support-banner.jpg"
+    alt="support banner"
+    className="w-full h-full object-cover object-center"
+  />
+</div>
 
-export default Support
+
+        <div className="flex flex-col justify-end mt-32 items-center min-h-60">
+          <h1 className="text-4xl md:text-5xl font-semibold text-center">
+            Apple Support
+          </h1>
+          <div className="flex flex-wrap gap-12 my-20 justify-center">
+            <div className="flex flex-col justify-end text-center gap-2">
+              <img
+                src="/assets/images/support/support-phone.png"
+                alt="img"
+                className="w-10 md:w-16"
+              />
+              <h4 className="mt-auto font-medium">iPhone</h4>
+            </div>
+            <div className="flex flex-col text-center gap-2">
+              <img
+                src="/assets/images/support/support-airpod.png"
+                alt="img"
+                className="w-24 md:w-28"
+              />
+              <h4 className="mt-auto font-medium">AirPod</h4>
+            </div>
+            <div className="flex flex-col text-center gap-2">
+              <img
+                src="/assets/images/support/support-music.png"
+                alt="img"
+                className="w-20 md:w-24"
+              />
+              <h4 className="mt-auto font-medium">Music</h4>
+            </div>
+            <div className="flex flex-col text-center gap-2">
+              <img
+                src="/assets/images/support/support-tv.png"
+                alt="img"
+                className="w-20 md:w-24"
+              />
+              <h4 className="mt-auto font-medium">TV</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Support;

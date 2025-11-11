@@ -9,7 +9,7 @@ import {
   yellowImg,
 } from "../utils";
 
-export const navLists = ["Store", "Mac", "iPhone", "Support"];
+export const navLists = ["Store", "Mac", "iPad", "Support"];
 
 export const hightlightsSlides = [
   {
@@ -222,3 +222,52 @@ export const macBox = [
     img:"/assets/images/mac/mac-display.jpg"
   },
 ]
+
+
+export const ipadBox1 = [
+  {
+    title:"iPad Pro",
+    desc: "The ultimate iPad experience with the most advanced technology",
+    price:"From ₹99900.00** or ₹15983.00/mo. for 6 mo.**",
+    img:"/assets/images/ipad/image-1.jpg",
+  },
+  {
+    title:"iPad Air",
+    desc: "Serious performance in a thin and light design.",
+    price:"From ₹59900.00** or ₹9317.00/mo. for 6 mo.**",
+    img:"/assets/images/ipad/image-2.jpg",
+  },
+  {
+    title:"iPad",
+    desc: "The colourful, all-screen iPad for the things you do every day.",
+    price:"From ₹34900.00** or ₹5317.00/mo. for 6 mo.**",
+    img:"/assets/images/ipad/image-3.jpg",
+  },
+  {
+    title:"iPad mini",
+    desc: "The full iPad experience in an ultra-portable design.",
+    price:"From ₹49900.00** or ₹7817.00/mo. for 6 mo.**",
+    img:"/assets/images/ipad/image-4.jpg",
+  },
+]
+
+export const ipadBox2 = [
+  {
+    title: "iPad and iPhone",
+    desc:
+      "iPad and iPhone are designed to work seamlessly together. Start something on one device and pick it up on the other with Handoff.",
+    image: "assets/images/ipad/image-5.jpg",
+  },
+  {
+    title: "iPad and Mac",
+    desc:
+      "iPad and Mac are designed to form the ultimate creative setup. Use Sidecar to mirror or extend your Mac display, or use Universal Control to move content seamlessly.",
+    image: "assets/images/ipad/image-6.jpg",
+  },
+  {
+    title: "iPad and Apple Watch",
+    desc:
+      "Stay connected and healthy with Apple Watch. View your fitness stats or control playback on your iPad easily.",
+    image: "assets/images/ipad/image-7.jpg",
+  },
+];
