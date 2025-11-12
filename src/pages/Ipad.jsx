@@ -47,41 +47,46 @@ const Ipad = () => {
   }, []);
   return (
     <>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-[1500px] mx-auto">
         <section className="p-4 ">
           <h1 className="text-5xl md:text-7xl font-semibold mt-12 md:mt-28 scale-down">
             iPad
           </h1>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-8 ">
-            {ipadBox1.map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col p-3 md:p-0  gap-4 bg-slate-900 rounded-[40px] box-gsap"
-              >
-                <div className="w-full overflow-hidden rounded-[40px] shadow-blue shadow-sm">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-300 ease-in-out "
-                  />
-                </div>
-                <div className="flex flex-col text-center gap-4 p-3">
-                  <h2 className="text-2xl font-bold">{item.title}</h2>
-                  <p className="font-thin max-w-sm mx-auto">{item.desc}</p>
-                  <h4 className="font-bold max-w-64 mx-auto">{item.price}</h4>
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-8">
+  {ipadBox1.map((item, index) => (
+    <div
+      key={index}
+      className="flex flex-col p-3 md:p-6 gap-4 bg-slate-900 rounded-[20px] box-gsap"
+    >
+      {/* Image */}
+      <div className="w-full h-64 overflow-hidden rounded-[20px] shadow-blue-500/30 shadow-sm">
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300 ease-in-out"
+        />
+      </div>
 
-                  <div className="flex w-full justify-around items-center my-8">
-                    <button className="bg-blue hover:bg-blue/80 cursor-pointer rounded-md p-2">
-                      Learn More
-                    </button>
-                    <button className="border-blue p-2 rounded-md border-2">
-                      Buy{">"}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Content */}
+      <div className="flex flex-col text-center gap-4 p-3 flex-grow">
+        <h2 className="text-2xl font-bold text-white">{item.title}</h2>
+        <p className="font-thin text-gray-200 max-w-sm mx-auto">{item.desc}</p>
+        <h4 className="font-bold text-blue-400">{item.price}</h4>
+
+        {/* Buttons */}
+        <div className="flex w-full justify-center gap-6 mt-auto mb-4">
+          <button className="bg-blue-600 text-white font-medium px-5 py-2 rounded-md hover:bg-blue-700 transition-colors duration-200">
+            Learn More
+          </button>
+          <button className="border-2 border-blue-600 text-blue-600 font-medium px-5 py-2 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-200">
+            Buy &gt;
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
         </section>
         <section className="p-4 my-14">
           <h1 className="text-4xl md:text67xl">Significant others.</h1>

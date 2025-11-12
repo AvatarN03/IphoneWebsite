@@ -13,11 +13,11 @@ createRoot(document.getElementById("root")).render(
   <Router>
     <Navbar />
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/store" element={<Store />} />
-      <Route path="/mac" element={<Mac />} />
-      <Route path="/ipad" element={<Ipad />} />
-      <Route path="/support" element={<Support />} />
+      <Route path={"/"} element={<App />} />
+      <Route path={"/store"} element={<Store />} />
+      <Route path={"/mac"} element={<Mac />} />
+      <Route path={"/ipad"} element={<Ipad />} />
+      <Route path={"/support"} element={<Support />} />
     </Routes>
   </Router>
 );

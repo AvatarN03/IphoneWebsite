@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 const Mac = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -14,8 +14,6 @@ const Mac = () => {
   const [showRightArrow, setShowRightArrow] = useState(true);
   const tabRefs = useRef([]);
   const scrollContainerRef = useRef(null);
-
-
 
   useEffect(() => {
     if (tabRefs.current[activeTab]) {
@@ -80,27 +78,26 @@ const Mac = () => {
       stagger: 0.4,
     });
 
-   gsap.from(".up", {
-  y: 150,
-  opacity: 0,
-  duration: 1.5,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".up", 
-    start: "top 80%",
-    end: "bottom center",
-    scrub: true,
-  },
-});
+    gsap.from(".up", {
+      y: 150,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".up",
+        start: "top 95%",
+        end: "bottom 70%",
+        scrub: true,
+      },
+    });
   }, []);
-
 
   // Filter products based on active tab
   const filterBox = macBox.filter((item) => {
-    if (activeTab === 0) return true; 
-    if (activeTab === 1) return item.type === "laptops"; 
-    if (activeTab === 2) return item.type === "desktops"; 
-    if (activeTab === 3) return item.type === "displays"; 
+    if (activeTab === 0) return true;
+    if (activeTab === 1) return item.type === "laptops";
+    if (activeTab === 2) return item.type === "desktops";
+    if (activeTab === 3) return item.type === "displays";
     return true;
   });
   return (
@@ -199,7 +196,7 @@ const Mac = () => {
         </div>
       </section>
 
-      <section className="p-4">
+      <section className="p-2 md:p-4">
         <h1 className="text-3xl md:text-5xl font-bold">
           If you can dream it, <br /> Mac can do it.
         </h1>
